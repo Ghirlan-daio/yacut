@@ -4,11 +4,10 @@ from re import match
 from flask import jsonify, request
 
 import constants
-
 from . import app, db
 from .error_handlers import InvalidAPIUsage
 from .models import URLMap
-from .views import get_unique_short_id
+from .utils import get_unique_short_id
 
 
 @app.route("/api/id/<string:short_id>/", methods=["GET"])
